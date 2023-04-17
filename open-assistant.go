@@ -7,6 +7,7 @@ import (
 	"github.com/zeromicro/go-zero/core/jsonx"
 	"github.com/zeromicro/go-zero/core/logx"
 	"open-assistant-helper-go/model"
+	"strings"
 )
 
 var rty = resty.New()
@@ -26,6 +27,24 @@ func CancelTask(id string) error {
 		return err
 	}
 	return nil
+}
+
+func RefreshCookie() error {
+	logx.Infof("RefreshCookie")
+	resp, err := rty.R().
+		SetHeaders(map[string]string{
+			"cookie": model.Conf.OaCookie,
+		}).
+		Get("https://open-assistant.io/api/auth/session")
+	if err != nil {
+		return err
+	}
+	cs := resp.Header()["Set-Cookie"]
+	if len(cs) == 0 {
+		return fmt.Errorf("no cookie")
+	}
+	c := strings.Join(cs, "")
+	return model.UpdateCookie(c)
 }
 
 func GetLabelsFromChatGPT(resp string) (map[model.OALabel]float32, error) {

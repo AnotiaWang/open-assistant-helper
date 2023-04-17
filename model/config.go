@@ -95,3 +95,16 @@ func LoadConfig() error {
 
 	return nil
 }
+
+func UpdateCookie(cookie string) error {
+	Conf.OaCookie = cookie
+	file, err := json.MarshalIndent(Conf, "", "    ")
+	if err != nil {
+		return err
+	}
+	err = os.WriteFile("config.json", file, 0644)
+	if err != nil {
+		return err
+	}
+	return nil
+}
