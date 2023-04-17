@@ -6,7 +6,7 @@ Accelerate your contribution to [Open Assistant](https://open-assistant.io).
 
 ## Features
 
-This project feeds tasks from Open Assistant to ChatGPT (GPT 3.5), along with corresponding prompts to help it complete the tasks. Then the replies will be sent back to Open Assistant.
+This project feeds tasks from Open Assistant to ChatGPT (GPT 3.5), along with corresponding prompts to help it complete the tasks. Then the replies will be sent back to Open Assistant. Note that this will cost you money.
 
 ## Usage
 
