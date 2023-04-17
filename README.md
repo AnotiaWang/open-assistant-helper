@@ -11,10 +11,15 @@ This project feeds tasks from Open Assistant to ChatGPT (GPT 3.5), along with co
 ## Usage
 
 - Go to [releases](https://github.com/AnotiaWang/open-assistant-helper/releases/latest) and download the latest version, according to you OS (Windows / Linux / macOS).
-- Run the executable file. The program will ask you for your [OpenAI Secret Key](https://platform.openai.com/account/api-keys), and your Open Assistant Cookie.
-  > You can find your Open Assistant Cookie in the browser's developer tools. 
-  > 
-  > Click on the `Network` tab, and then refresh the page. Find the request called `dashboard` at the top, and click on it. Then copy the `cookie` field in the `Request Headers` section.
+- Run the executable file. The program will ask you for:
+  - your [OpenAI Secret Key](https://platform.openai.com/account/api-keys)
+  - your Open Assistant Cookie
+    >   **Note** You can find your Open Assistant Cookie in the browser's developer tools. 
+    > 
+    >   Click on the `Network` tab, and then refresh the page. Find the request called `dashboard` at the top, and click on it. Then copy the `cookie` field in the `Request Headers` section.
+  - Preferred language for the tasks (language code only, default `zh` for Chinese).
+
+The configuration file is saved in `config.json`.
 
 ## Build
 
@@ -26,8 +31,8 @@ This project feeds tasks from Open Assistant to ChatGPT (GPT 3.5), along with co
 
 - [ ] Support task `label_initial_prompt`
   
-  This task is a bit hard to find in my language configuration, I'll keep finding it.
-- [ ] Support other language models
+  This task is a bit hard to find for my language configuration, I'll keep finding it.
+- [ ] Support other language models (maybe)
   
   There have been many excellent LLMs coming out recently, like GPT4All. I may try to support them in my free time(but no guarantees). if you have ideas, PRs are welcome!
 

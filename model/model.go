@@ -6,6 +6,7 @@ var ChatGPTClientKey = "chatgpt"
 type Config struct {
 	ApiKey   string `json:"apiKey"`
 	OaCookie string `json:"oaCookie"`
+	Language string `json:"language"`
 }
 
 type OALabel string

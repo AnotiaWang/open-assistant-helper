@@ -87,7 +87,7 @@ You MUST reply a JSON string, DO NOT include any other characters, DO NOT explai
 	}
 	body := model.PostBodyLabelAssistant{
 		Id:         id,
-		Lang:       "zh",
+		Lang:       model.Conf.Language,
 		UpdateType: "text_labels",
 		Content: model.PostBodyLabelAssistantContent{
 			Labels:    labels,
@@ -157,7 +157,7 @@ You must return a JSON string, DO NOT include any other characters, DO NOT expla
 
 	body := model.PostBodyLabelPrompter{
 		Id:         id,
-		Lang:       "zh",
+		Lang:       model.Conf.Language,
 		UpdateType: "text_labels",
 		Content: model.PostBodyLabelPrompterContent{
 			Labels:    labels,
@@ -208,7 +208,7 @@ func AssistantReply(id string, task model.OAAssistantReplyTask) error {
 	logx.Infof("AssistantReply: %s", t)
 	body := model.PostBodyAssistant{
 		Id:         id,
-		Lang:       "zh",
+		Lang:       model.Conf.Language,
 		UpdateType: "text_reply_to_message",
 		Content: model.PostBodyAssistantContent{
 			Text: t,
@@ -256,7 +256,7 @@ func PrompterReply(id string, task model.OAPrompterReplyTask) error {
 	logx.Infof("PrompterReply: %s", t)
 	body := model.PostBodyPrompter{
 		Id:         id,
-		Lang:       "zh",
+		Lang:       model.Conf.Language,
 		UpdateType: "text_reply_to_message",
 		Content: model.PostBodyPrompterContent{
 			Text: t,
@@ -316,7 +316,7 @@ Give the ranking in JSON format, DO NOT include any other characters, DO NOT exp
 	}
 	body := model.PostBodyRankAssistant{
 		Id:         id,
-		Lang:       "zh",
+		Lang:       model.Conf.Language,
 		UpdateType: "message_ranking",
 		Content:    content,
 	}

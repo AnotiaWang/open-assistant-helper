@@ -11,11 +11,15 @@
 ## 使用方法
 
 - 转到 [Release 页面](https://github.com/AnotiaWang/open-assistant-helper/releases/latest) 并根据您的操作系统（Windows / Linux / macOS）下载最新版本。
-- 运行可执行文件。程序将要求您输入您的 [OpenAI 密钥](https://platform.openai.com/account/api-keys) 和您的 Open Assistant Cookie。
-  > **Note**
-  > 您可以在浏览器的开发者工具中获取您的 Open Assistant Cookie。
-  >
-  > 单击 `Network` 标签，然后刷新页面。在 Network 顶部找到名为 `dashboard` 的请求，单击它。然后在 `Request Headers` 部分复制 `cookie` 字段。
+- 运行可执行文件。程序将要求您输入：
+  - [OpenAI 密钥](https://platform.openai.com/account/api-keys) 
+  - 您的 Open Assistant Cookie
+    >   **Note** 您可以在浏览器的开发者工具中获取您的 Open Assistant Cookie。
+    >
+    >   单击 `Network` 标签，然后刷新页面。在 Network 顶部找到名为 `dashboard` 的请求，单击它。然后在 `Request Headers` 部分复制 `cookie` 字段。
+  - 任务的首选语言（语言代码，例如 `zh` 为中文）。
+
+配置文件保存在 `config.json` 中。
 
 ## 构建
 
@@ -28,7 +32,7 @@
 - [ ] 支持任务 `label_initial_prompt`
 
   这个任务在我的语言配置中有点难找，我会继续找的。
-- [ ] 支持其他语言模型
+- [ ] 支持其他语言模型（或许）
 
   最近出现了许多优秀的 LLM，比如 GPT4All。我可能会在空闲时间尝试支持它们（但不能保证）。如果您有想法，欢迎提 PR！
 - [ ] ...
