@@ -368,7 +368,7 @@ func StartTask() error {
 			"Cookie":       model.Conf.OaCookie,
 			"Content-Type": "application/json",
 		}).
-		Get("https://open-assistant.io/api/new_task/random?lang=zh")
+		Get("https://open-assistant.io/api/new_task/random?lang=" + model.Conf.Language)
 	if err != nil {
 		return err
 	}
