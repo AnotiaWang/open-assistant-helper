@@ -78,6 +78,20 @@ type OALabelPrompterReplyTask struct {
 	UserId          string              `json:"userId"`
 }
 
+type OALabelInitialPromptTask struct {
+	Id              string              `json:"id"`
+	Mode            string              `json:"mode"`
+	Type            string              `json:"type"`
+	Labels          []OARandomTaskLabel `json:"labels"`
+	Prompt          string              `json:"prompt"`
+	MessageId       string              `json:"message_id"`
+	Disposition     string              `json:"disposition"`
+	Conversation    OAConversation      `json:"conversation"`
+	ValidLabels     []OALabel           `json:"valid_labels"`
+	MandatoryLabels []OALabel           `json:"mandatory_labels"`
+	UserId          string              `json:"userId"`
+}
+
 type OAAssistantReplyTask struct {
 	Id           string         `json:"id"`
 	Type         string         `json:"type"`
@@ -161,4 +175,16 @@ type PostBodyRankAssistant struct {
 	Lang       string                       `json:"lang"`
 	UpdateType string                       `json:"update_type"`
 	Content    PostBodyRankAssistantContent `json:"content"`
+}
+
+type PostBodyLabelInitialPromptContent struct {
+	Labels    map[OALabel]float32 `json:"labels"`
+	MessageId string              `json:"message_id"`
+	Text      string              `json:"text"`
+}
+type PostBodyLabelInitialPrompt struct {
+	Id         string                            `json:"id"`
+	Lang       string                            `json:"lang"`
+	UpdateType string                            `json:"update_type"`
+	Content    PostBodyLabelInitialPromptContent `json:"content"`
 }

@@ -29,9 +29,7 @@ The configuration file is saved in `config.json`.
 
 ## Plans
 
-- [ ] Support task `label_initial_prompt`
-  
-  This task is a bit hard to find for my language configuration, I'll keep finding it.
+- [x] ~~Support task `label_initial_prompt`~~
 - [ ] Support other language models (maybe)
   
   There have been many excellent LLMs coming out recently, like GPT4All. I may try to support them in my free time(but no guarantees). if you have ideas, PRs are welcome!
