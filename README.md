@@ -45,3 +45,7 @@ export https_proxy=http://your-proxy:port
 ```
 
 Then run the executable file in the same terminal session.
+
+---
+
+This project is supported by the [Cloudflare OSS Sponsoring Program](https://www.cloudflare.com/).
